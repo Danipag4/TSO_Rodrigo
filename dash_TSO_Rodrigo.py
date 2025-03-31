@@ -121,7 +121,7 @@ if AvalEquipe:
     df_filtered3 = df
 #df_filtered3
 
-    df_MédiaSetor = df_filtered3.groupby("Nome")[["Auto Avaliação","Avaliador"]].mean().reset_index()
+    df_MédiaSetor = df_filtered3.groupby("Nome")[["Auto Avaliação","Avaliador"]].mean().round(decimals=2).reset_index()
 #df_MédiaSetor
 
     fig_Setor = px.bar(df_MédiaSetor, x=aval, y="Nome", orientation="h", barmode='group', color_discrete_map = {"Auto Avaliação":"Brown", "Avaliador":"Yellow"})
